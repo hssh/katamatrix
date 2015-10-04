@@ -13,11 +13,13 @@ CodeKata in multi-languages
 EOS
 
 # Table of links
+url_base = "https://github.com/hssh/katamatrix/tree/master"
+
 puts ([''] + langs).join(' | ')
-puts '-:|' + ([':-:'] * langs.size).join('|')
+puts '--:|' + ([':--:'] * langs.size).join('|')
 katas.each do |kata|
   links = langs.map do |lang|
-    Dir.exists?(File.expand_path("#{kata}/#{lang}", root)) ? "[o](tree/#{kata}/#{lang})" : '-'
+    Dir.exists?(File.expand_path("#{kata}/#{lang}", root)) ? "[o](#{url_base}/#{kata}/#{lang})" : '-'
   end
-  puts (["[#{kata}](tree/#{kata})"] + links).join(' | ')
+  puts (["[#{kata}](#{url_base}/#{kata})"] + links).join(' | ')
 end
