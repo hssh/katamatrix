@@ -6,3 +6,6 @@
 
 # Erlang
 *.beam
+
+# C
+a.out
